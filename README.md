@@ -1,4 +1,4 @@
-# AnimationP rediction
+# Animation Prediction
 Predict future animation frames based on previous extracted frames.  
 The file animation_data.json is the data extracted from Blender, the original animaiton is a simple walk animation of a character, it has 42 frames, the data on this json file is for the transforms on each bone for each frame.  
 The data is processed and normalized in prepare_data.py, then the 2 experimental model architectures are transformer_model.py and rnn_model.py, so far rhe RNN gives better results.  

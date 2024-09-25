@@ -6,7 +6,7 @@ Once the models are trained and saved, they are being used in future_frames.py t
 The future_frames.py will reverse the normalization of the data and produce the predicted_future_frames.json file which can be loaded back in Blender and set the next keyframes for the bones with the predicted animation.  
 
 # TODO:  
-The main root node which is hips, has to be processed separately since is not giving good results, but overall the character is moving like it's walking.  
+The main root node which is hips, has to be processed separately since is not giving good results.  
 
 Initial test animation:  
 

@@ -35,12 +35,12 @@ for _ in range(num_predictions):
     prediction = model.predict(input_sequence)
     print(prediction)
     predicted_frame = prediction[0, -1]  # Get the last predicted frame
-    
+
     # Add small random noise to introduce variation
     # noise = np.random.normal(0, 0.01, predicted_frame.shape)
-    
+
     predicted_frames.append(predicted_frame)
-    
+
     # Update input_sequence for the next prediction
     input_sequence = np.roll(input_sequence, -1, axis=1)
     input_sequence[0, -1] = predicted_frame

@@ -9,7 +9,7 @@ def normalize_rotation(quaternion):
     return quaternion / np.linalg.norm(quaternion)
 
 # Load the JSON file
-with open('animation_data.json') as f:
+with open('new_animation_data.json') as f:
     animation_data = json.load(f)
 
 # Organize the data into a list of frames and bones
@@ -36,7 +36,7 @@ for frame_data in animation_data:
         bone_data = frame_data['bones'][bone_name]
         position = np.array(bone_data['location'])
         rotation = np.array(bone_data['rotation'])
-        
+
         # Normalize position
         normalized_position = normalize_position(position, mean_position, std_position)
         # Normalize rotation (quaternion)
@@ -44,7 +44,7 @@ for frame_data in animation_data:
         # Combine normalized position and rotation into a single vector
         bone_vector = np.concatenate([normalized_position, normalized_rotation])
         frame_info.extend(bone_vector)
-    
+
     all_frames.append(frame_info)
 
 # Convert to numpy array for easier manipulation
